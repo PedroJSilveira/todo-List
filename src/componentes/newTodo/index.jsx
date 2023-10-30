@@ -9,10 +9,12 @@ const InputTodo = ({ onNewTodo }) => {
 
     const [tarefa, setTarefa] = useState('')
 
+    //função para quando a tecla ESC for apertada apagar o que está no input
     const apagar = () => {
         setTarefa('')
       }
 
+    //função para quando a tecla ENTER for apertada enviar a tarefa para a função que a add na lista
     const enviar = () => {
         if(onNewTodo){
             onNewTodo(tarefa)
@@ -20,10 +22,12 @@ const InputTodo = ({ onNewTodo }) => {
         }
     }
 
+    //setando o nome da tarefa
     const onChange = (event) => {
         setTarefa(event.target.value)
       }
 
+    //verificação se a tecla ESC ou ENTER foram apertadas
     const onKeyDown = (event) => {
         if (event.which === ENTER_KEY)
         {
@@ -35,6 +39,7 @@ const InputTodo = ({ onNewTodo }) => {
         }
     }
 
+    //INPUT de retorno
     return (
         <input
             className='new-todo'

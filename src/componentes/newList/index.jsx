@@ -4,10 +4,12 @@ import { MdDelete } from 'react-icons/md'
 
 import './style.css'
 
+//retorno da lista com as tarefas
 const ListTodo = ({todos, checked, remove}) =>{
     return(
         <ul className='todo-list'>
         {
+          /* Mapeamento das tarefas */
           todos.map(todo => (
             <li key={todo.id} className={todo.check ? 'todo check' : 'todo'}>
               <span className='todo' onClick={() => checked(todo) && checked} role='button'>
